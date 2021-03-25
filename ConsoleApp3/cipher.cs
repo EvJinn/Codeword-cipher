@@ -21,10 +21,9 @@ namespace ConsoleApp3
             var cipherText = new List<char>();
             for (int i = 0; i < text.Length; i++)
             {
-                char symb = text[i];
                 for (int j = 0; j < firstAlphabet.Count(); j++)
-                    if (symb == firstAlphabet.ElementAt(j)) cipherText.Add(secondAlphabet.ElementAt(j));
-                if (symb == ' ') cipherText.Add(' ');
+                    if (text[i] == firstAlphabet.ElementAt(j)) cipherText.Add(secondAlphabet.ElementAt(j));
+                if (text[i] == ' ') cipherText.Add(' ');
             }
 
             return string.Join('\0', cipherText);
@@ -35,10 +34,9 @@ namespace ConsoleApp3
             var decodedText = new List<char>();
             for (int i = 0; i < cipherText.Length; i++)
             {
-                char symb = cipherText[i];
                 for (int j = 0; j < secondAlphabet.Count(); j++)
-                    if (symb == secondAlphabet.ElementAt(j)) decodedText.Add(firstAlphabet.ElementAt(j));
-                if (symb == ' ') decodedText.Add(' ');
+                    if (cipherText[i] == secondAlphabet.ElementAt(j)) decodedText.Add(firstAlphabet.ElementAt(j));
+                if (cipherText[i] == ' ') decodedText.Add(' ');
             }
 
             return string.Join('\0', decodedText);

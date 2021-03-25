@@ -1,19 +1,27 @@
-﻿using ConsoleApp3;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
-namespace Codewordcipher
+namespace ConsoleApp3
 {
     public class UserInput
     {
-        public readonly string input;
-
-        public UserInput(string input)
+        public static bool inputCheck(string input)
         {
-            this.input = input;
-            //cipher.firstAlphabet;
+            bool flag = false;
 
+            for (int i = 0; i < input.Length; i++)
+            {
+                for (int j = 0; j < cipher.firstAlphabet.Count(); j++)
+                {
+                    if (input[i] == ' ') continue;
+                    if (input[i] == cipher.firstAlphabet.ElementAt(j)) flag = true;
+                }
+                if (flag == false) break;
+            }
+
+            return flag;
         }
     }
 }
