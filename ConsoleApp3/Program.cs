@@ -69,8 +69,6 @@ namespace ConsoleApp3
                         Console.WriteLine(decodedText);
                     }
                     break;
-                default:
-                    break;
             }
         }
     }
