@@ -23,5 +23,17 @@ namespace ConsoleApp3
 
             return flag;
         }
+        public static bool inputCheck(string n, int type)
+        {
+            bool flag;
+            uint check;
+
+            flag = UInt32.TryParse(n, out check);
+            if (flag == true) 
+                if (check != 1 && check != 2) flag = false;
+
+            return flag;
+        }
+
     }
 }

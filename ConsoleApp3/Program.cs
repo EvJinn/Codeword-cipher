@@ -27,7 +27,15 @@ namespace ConsoleApp3
             Console.WriteLine(  "\nЧто делаем?: \n" +
                                 "1. Шифруем \n" +
                                 "2. Дешифруем \n");
-            int n = Convert.ToInt32(Console.ReadLine());
+            
+            //ужасный костыль, не смотрите сюда
+            string a = Console.ReadLine();
+            while (!UserInput.inputCheck(a, 0))
+            {
+                Console.WriteLine("Ошибка ввода. Повторите попытку!");
+                a = Console.ReadLine();
+            }
+            uint n = Convert.ToUInt32(a);
 
             Console.WriteLine("\nВведите текст:");
             
