@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>Codeword cipher</AssemblyName>
-    <RootNamespace>Codeword cipher</RootNamespace>
+    <RootNamespace>Codewordcipher</RootNamespace>
   </PropertyGroup>
 
 </Project>

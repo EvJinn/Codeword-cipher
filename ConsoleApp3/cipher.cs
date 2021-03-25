@@ -7,7 +7,7 @@ namespace ConsoleApp3
 {
     public class cipher
     {
-        public readonly IEnumerable<char> firstAlphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя".ToCharArray().AsEnumerable();
+        public static readonly IEnumerable<char> firstAlphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя".ToCharArray().AsEnumerable();
         public readonly IEnumerable<char> secondAlphabet;
 
         public cipher(string codeWord)

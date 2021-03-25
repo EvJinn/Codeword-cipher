@@ -16,7 +16,7 @@ namespace ConsoleApp3
             Console.WriteLine(string.Join('\0', cipher.firstAlphabet));
             Console.WriteLine(string.Join('\0', cipher.secondAlphabet));
 
-            Console.WriteLine("Что делаем?: \n" +
+            Console.WriteLine(  "Что делаем?: \n" +
                                 "1. Шифруем \n" +
                                 "2. Дешифруем \n");
             int n = Convert.ToInt32(Console.ReadLine());
