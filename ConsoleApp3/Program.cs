@@ -11,7 +11,7 @@ namespace ConsoleApp3
             Console.WriteLine("Введите кодовое слово на киррилице:");
             string codeWord = Console.ReadLine();
 
-            codeWord = codeWord.Replace(" ", "");
+            codeWord = codeWord.ToLower().Replace(" ", "");
             while (!UserInput.inputCheck(codeWord))
             {
                 Console.WriteLine("Ошибка ввода. Повторите попытку!");
@@ -43,7 +43,7 @@ namespace ConsoleApp3
             {
                 case 1:
                     {
-                        string text = Console.ReadLine();
+                        string text = Console.ReadLine().ToLower();
 
                         while (!UserInput.inputCheck(text))
                         {
@@ -57,7 +57,7 @@ namespace ConsoleApp3
                     break;
                 case 2:
                     {
-                        string cipherText = Console.ReadLine();
+                        string cipherText = Console.ReadLine().ToLower();
 
                         while (!UserInput.inputCheck(cipherText))
                         {
