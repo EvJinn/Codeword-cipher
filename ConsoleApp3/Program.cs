@@ -12,17 +12,17 @@ namespace ConsoleApp3
             string codeWord = Console.ReadLine();
 
             codeWord = codeWord.ToLower().Replace(" ", "");
-            while (!UserInput.inputCheck(codeWord))
+            while (!UserInput.inputCheck(codeWord)) //Проверка введёного текста на соответствие алфавиту шифра
             {
                 Console.WriteLine("Ошибка ввода. Повторите попытку!");
                 codeWord = Console.ReadLine();
-                codeWord = codeWord.Replace(" ", "");
+                codeWord = codeWord.Replace(" ", ""); //Убираем все пробелы из вводимого текста (защита от дурака)
             }
 
-            cipher cipher = new cipher(codeWord);
+            cipher cipher = new cipher(codeWord); //Объект с которым будем работать. Конструктор сразу создаёт шифруемый алфавит
 
-            Console.WriteLine('\n' + string.Join('\0', cipher.firstAlphabet));
-            Console.WriteLine(string.Join('\0', cipher.secondAlphabet));
+            Console.WriteLine('\n' + string.Join('\0', cipher.firstAlphabet));  //Выводим первоначальный алфавит
+            Console.WriteLine(string.Join('\0', cipher.secondAlphabet));        //Выводим шифруемый алфавит
 
             Console.WriteLine(  "\nЧто делаем?: \n" +
                                 "1. Шифруем \n" +
@@ -39,34 +39,34 @@ namespace ConsoleApp3
 
             Console.WriteLine("\nВведите текст:");
             
-            switch (n)
+            switch (n) //Выбор пунктов меню
             {
                 case 1:
                     {
-                        string text = Console.ReadLine().ToLower();
+                        string text = Console.ReadLine().ToLower(); //При считывании преобразуем всю строку в нижний регистр
 
-                        while (!UserInput.inputCheck(text))
+                        while (!UserInput.inputCheck(text)) //Проверка введёного текста на соответствие алфавиту шифра
                         {
                             Console.WriteLine("Ошибка ввода. Повторите попытку!");
                             text = Console.ReadLine();
                         }
 
-                        string cipherText = cipher.encode(text);
-                        Console.WriteLine(cipherText);
+                        string cipherText = cipher.encode(text); //Кодируем
+                        Console.WriteLine(cipherText); //Выводим результат
                     }
                     break;
                 case 2:
                     {
-                        string cipherText = Console.ReadLine().ToLower();
+                        string cipherText = Console.ReadLine().ToLower(); //При считывании преобразуем всю строку в нижний регистр
 
-                        while (!UserInput.inputCheck(cipherText))
+                        while (!UserInput.inputCheck(cipherText)) //Проверка введёного текста на соответствие алфавиту шифра
                         {
                             Console.WriteLine("Ошибка ввода. Повторите попытку!");
                             cipherText = Console.ReadLine();
                         }
 
-                        string decodedText = cipher.decode(cipherText);
-                        Console.WriteLine(decodedText);
+                        string decodedText = cipher.decode(cipherText); //Декодируем
+                        Console.WriteLine(decodedText); //Выводим результат
                     }
                     break;
             }
