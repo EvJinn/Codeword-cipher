@@ -26,7 +26,7 @@ namespace ConsoleApp3
                 if (text[i] == ' ') cipherText.Add(' '); //Пробелы просто добавляем в список
             }
 
-            return string.Join('\0', cipherText); //Возвращаем результат в виде строки
+            return string.Join("", cipherText); //Возвращаем результат в виде строки
         }
 
         public string decode(string cipherText) //Декодируем. Принцип тот же самый что у кодировки, только проходим алфавиты в обратном порядке
@@ -39,7 +39,7 @@ namespace ConsoleApp3
                 if (cipherText[i] == ' ') decodedText.Add(' ');
             }
 
-            return string.Join('\0', decodedText);
+            return string.Join("", decodedText);
         }
     }
 }

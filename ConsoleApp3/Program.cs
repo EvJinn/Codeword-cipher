@@ -21,8 +21,8 @@ namespace ConsoleApp3
 
             cipher cipher = new cipher(codeWord); //Объект с которым будем работать. Конструктор сразу создаёт шифруемый алфавит
 
-            Console.WriteLine('\n' + string.Join('\0', cipher.firstAlphabet));  //Выводим первоначальный алфавит
-            Console.WriteLine(string.Join('\0', cipher.secondAlphabet));        //Выводим шифруемый алфавит
+            Console.WriteLine('\n' + string.Join("", cipher.firstAlphabet));  //Выводим первоначальный алфавит
+            Console.WriteLine(string.Join("", cipher.secondAlphabet));        //Выводим шифруемый алфавит
 
             Console.WriteLine(  "\nЧто делаем?: \n" +
                                 "1. Шифруем \n" +
