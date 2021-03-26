@@ -56,17 +56,17 @@ namespace ConsoleApp3
                     }
                     break;
                 case 2:
-                    {
-                        string cipherText = Console.ReadLine().ToLower(); //При считывании преобразуем всю строку в нижний регистр
+                    { //Всё то же самое
+                        string cipherText = Console.ReadLine().ToLower(); 
 
-                        while (!UserInput.inputCheck(cipherText)) //Проверка введёного текста на соответствие алфавиту шифра
+                        while (!UserInput.inputCheck(cipherText)) 
                         {
                             Console.WriteLine("Ошибка ввода. Повторите попытку!");
                             cipherText = Console.ReadLine();
                         }
 
-                        string decodedText = cipher.decode(cipherText); //Декодируем
-                        Console.WriteLine(decodedText); //Выводим результат
+                        string decodedText = cipher.decode(cipherText); 
+                        Console.WriteLine(decodedText); 
                     }
                     break;
             }
