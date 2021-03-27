@@ -18,12 +18,12 @@ namespace ConsoleApp3
 
         public string encode(string text) //Кодируем
         {
-            var cipherText = new List<char>(); //Список для создания зашифрованного текста
+            var cipherText = new StringBuilder(); //строка зашифрованного текста
             for (int i = 0; i < text.Length; i++)
-            { //Находим индекс буквы из текста в исходном алфавите и добавляем в список букву с тем же индексом в шифруемом алфавите
+            { //Находим индекс буквы из текста в исходном алфавите и добавляем в строку букву с тем же индексом в шифруемом алфавите
                 for (int j = 0; j < firstAlphabet.Count(); j++)
-                    if (text[i] == firstAlphabet.ElementAt(j)) cipherText.Add(secondAlphabet.ElementAt(j)); 
-                if (text[i] == ' ') cipherText.Add(' '); //Пробелы просто добавляем в список
+                    if (text[i] == firstAlphabet.ElementAt(j)) cipherText.Append(secondAlphabet.ElementAt(j)); 
+                if (text[i] == ' ') cipherText.Append(' '); //Пробелы просто добавляем в строку
             }
 
             return string.Join("", cipherText); //Возвращаем результат в виде строки
@@ -31,12 +31,12 @@ namespace ConsoleApp3
 
         public string decode(string cipherText) //Декодируем. Принцип тот же самый что у кодировки, только проходим алфавиты в обратном порядке
         {
-            var decodedText = new List<char>();
+            var decodedText = new StringBuilder();
             for (int i = 0; i < cipherText.Length; i++)
             {
                 for (int j = 0; j < secondAlphabet.Count(); j++)
-                    if (cipherText[i] == secondAlphabet.ElementAt(j)) decodedText.Add(firstAlphabet.ElementAt(j));
-                if (cipherText[i] == ' ') decodedText.Add(' ');
+                    if (cipherText[i] == secondAlphabet.ElementAt(j)) decodedText.Append(firstAlphabet.ElementAt(j));
+                if (cipherText[i] == ' ') decodedText.Append(' ');
             }
 
             return string.Join("", decodedText);
